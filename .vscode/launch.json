@@ -11,7 +11,9 @@
             "mode": "auto",
             "program": "${fileDirname}",
             "args": [
-                "-? "
+                "-Xjre",
+                "/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre",
+                "java.lang.Object"
             ]
         }
     ]
