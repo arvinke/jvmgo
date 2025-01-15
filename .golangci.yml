@@ -1,0 +1,52 @@
+run:
+  timeout: 5m
+  go: 1.23.4
+
+linters-settings:
+  funlen:
+    lines: 150
+    statements: 100
+  goconst:
+    min-len: 3
+    min-occurrences: 3
+  lll:
+    line-length: 80
+  govet:            # 对于linter govet，这里手动开启了它的某些扫描规则
+    shadow: true
+    check-unreachable: true
+    check-rangeloops: true
+    check-copylocks: true
+    # 启动nilness检测
+    enable:
+      - nilness
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    - errcheck
+    - funlen
+    - goconst
+    - gocyclo
+    - gofmt
+    - goimports
+    - gosimple
+    - govet
+    - ineffassign
+    - lll
+    - misspell # Go 静态分析工具，专注于检查代码中的拼写错误
+    - nilerr
+    - rowserrcheck
+    - staticcheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - whitespace
+
+issues:
+  skip-dirs:
+    - test
+
+  exclude-files:
+    - _test.go
